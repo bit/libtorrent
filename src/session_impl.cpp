@@ -743,8 +743,8 @@ namespace aux {
 				m_alerts.post_alert(listen_failed_alert(m_listen_interface
 					, listen_failed_alert::parse_addr, ec, listen_failed_alert::tcp));
 #if defined TORRENT_VERBOSE_LOGGING || defined TORRENT_LOGGING || defined TORRENT_ERROR_LOGGING
-			session_log("failed to parse listen interface: %s: (%d) %s"
-				, m_listen_interface.c_str(), ec.value(), ec.message().c_str());
+			session_log("failed to parse listen interface: \"%s\": (%d) %s"
+				, listen_interface ? listen_interface : "", ec.value(), ec.message().c_str());
 #endif
 		}
 
